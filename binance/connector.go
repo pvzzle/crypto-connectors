@@ -47,10 +47,10 @@ func (c *connector) privateFetch(method, path, queryString string, body []byte) 
 	r := &http.Request{
 		Method: method,
 		URL: &url.URL{
-			Path: path,
+			Path:     path,
 			RawQuery: queryString,
 		},
-		Body: io.NopCloser(bytes.NewReader(body)),
+		Body:   io.NopCloser(bytes.NewReader(body)),
 		Header: http.Header{},
 	}
 
@@ -64,7 +64,7 @@ func (c *connector) publicFetch(method, path, queryString string) (*http.Respons
 	r := &http.Request{
 		Method: method,
 		URL: &url.URL{
-			Path: path,
+			Path:     path,
 			RawQuery: queryString,
 		},
 		Header: http.Header{},

@@ -28,10 +28,7 @@ func NewConnector() *connector {
 }
 
 func (c *connector) hasCredentials() bool {
-	if c.credentials.public != "" && c.credentials.secret != "" {
-		return true
-	}
-	return false
+	return c.credentials.public != "" && c.credentials.secret != ""
 }
 
 func (c *connector) setCredentials(public, secret string) {
